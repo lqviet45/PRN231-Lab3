@@ -1,0 +1,20 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  prn231-se171227.lab3.api:
+    build:
+      context: "E:\\FPTU\\2024_8_FALL\\PRN231\\labs-imp\\Lab3"
+      dockerfile: "PRN231-SE171227.Lab3.Api/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/PRN231-SE171227.Lab3.Api.dll"
+    environment:
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "prn231-se171227.lab3.api:dev"
+    ports: []
+    volumes:
+    - "C:\\Users\\DELL\\.nuget\\packages:/home/app/.nuget/packages"
+    - "E:\\FPTU\\2024_8_FALL\\PRN231\\labs-imp\\Lab3\\PRN231-SE171227.Lab3.Api:/app:rw"
+    - "E:\\FPTU\\2024_8_FALL\\PRN231\\labs-imp\\Lab3:/src:rw"
+    working_dir: "/app"

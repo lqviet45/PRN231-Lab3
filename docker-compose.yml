@@ -1,0 +1,37 @@
+﻿services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    container_name: sqlserver
+    user: root
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_SA_PASSWORD: Password12345
+    ports:
+      - 1433:1433
+    volumes:
+      - ./mssql_data:/var/opt/mssql/data
+    networks:
+      - lab3
+  
+  prn231-se171227.lab3.api:
+    image: prn231-se171227.lab3.api
+    build:
+      context: .
+      dockerfile: PRN231-SE171227.Lab3.Api/Dockerfile
+    container_name: lab3.api
+    environment:
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=Lab3;User Id=sa;Password=Password12345;
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - 5287:80
+    depends_on:
+      - sqlserver
+    networks:
+      - lab3
+      
+networks:
+  lab3:
+    driver: bridge
+volumes:
+  mssql_data:

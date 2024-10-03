@@ -1,10 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3.Api", "Lab3.Api\Lab3.Api.csproj", "{CCA24D8D-5D8C-4A3D-BF94-64796B3DF994}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PRN231-SE171227.Lab3.Api", "PRN231-SE171227.Lab3.Api\PRN231-SE171227.Lab3.Api.csproj", "{CCA24D8D-5D8C-4A3D-BF94-64796B3DF994}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{B6A949C7-C07D-4D1A-AC79-D1614A042E21}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PRN231-SE171227.Lab3.Repository", "Repository\PRN231-SE171227.Lab3.Repository.csproj", "{B6A949C7-C07D-4D1A-AC79-D1614A042E21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{C934B634-EF80-432E-8923-3787E3F322B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PRN231-SE171227.Lab3.Services", "PRN231-SE171227.Lab3.Services\PRN231-SE171227.Lab3.Services.csproj", "{C934B634-EF80-432E-8923-3787E3F322B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E4106B70-74F6-49A9-9617-A595E066F5E3}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
