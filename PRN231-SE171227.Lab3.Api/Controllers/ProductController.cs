@@ -1,4 +1,5 @@
-﻿using Asp.Versioning;
+﻿using System.ComponentModel.DataAnnotations;
+using Asp.Versioning;
 using Microsoft.AspNetCore.Mvc;
 using Repository.entities;
 using Services.abstraction;
@@ -64,7 +65,7 @@ public class ProductController : ControllerBase
     }
     
     [HttpPut("{id}")]
-    public async Task<IActionResult> Put(int id, [FromBody] Request.ProductRequest request)
+    public async Task<IActionResult> Put([Required] int id, [FromBody] Request.ProductRequest request)
     {
         var product = new Product()
         {
@@ -85,7 +86,7 @@ public class ProductController : ControllerBase
     }
     
     [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
+    public async Task<IActionResult> Delete([Required] int id)
     {
         var result = await _productServices.DeleteProduct(id);
         if (!result)

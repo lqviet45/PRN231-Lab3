@@ -16,7 +16,7 @@ public interface IProductServices
         SortBy sortBy = SortBy.ProductName,
         SortOrder sortOrder = SortOrder.Asc);
     Task<Response.ProductDetailResponse?> GetProductById(int id);
-    Task<Product> AddProduct(Product product);
+    Task<ProductResponse> AddProduct(Product product);
     Task<bool> UpdateProduct(Product product);
     Task<bool> DeleteProduct(int id);
 }

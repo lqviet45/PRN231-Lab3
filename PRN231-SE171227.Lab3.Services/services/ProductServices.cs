@@ -102,14 +102,14 @@ public class ProductServices : IProductServices
 
         if (product == null)
         {
-            throw new Exception("Product not found");
+            return null;
         }
         
         var productResponse = _mapper.Map<Product, Response.ProductDetailResponse>(product);
         return productResponse;
     }
 
-    public async Task<Product> AddProduct(Product product)
+    public async Task<ProductResponse> AddProduct(Product product)
     {
         _productRepository.Add(product);
 
@@ -120,7 +120,7 @@ public class ProductServices : IProductServices
             throw new Exception("Failed to add product");
         }
         
-        return product;
+        return _mapper.Map<Product, ProductResponse>(product);
     }
 
     public async Task<bool> UpdateProduct(Product product)
@@ -150,7 +150,7 @@ public class ProductServices : IProductServices
         
         if (product == null)
         {
-            throw new Exception("Product not found");
+            return false;
         }
         
         _productRepository.Delete(product);

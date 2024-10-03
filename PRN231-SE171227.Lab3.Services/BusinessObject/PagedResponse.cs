@@ -19,9 +19,12 @@ public class ProductResponse
 {
     public int Id { get; set; }
     
+    [JsonPropertyName("product-name")]
     public string? ProductName { get; set; }
 
+    [JsonPropertyName("units-in-stock")]
     public int UnitsInStock { get; set; }
     
+    [JsonPropertyName("unit-price")]
     public decimal UnitPrice { get; set; }
 }
